@@ -1,0 +1,55 @@
+---
+server:
+  port: 8088
+
+---
+spring:
+  redis:
+    host: 10.60.105.38
+    port: 8154
+    ssl: false
+    timeout: 12m
+    jedis:
+      pool:
+        max-active: 1
+        max-idle: 25
+        max-wait: 30000ms
+        min-idle: 5
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://171.244.40.91:3306/foodlink?zeroDateTimeBehavior=convertToNull
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: BringM3F00d
+    defaultSchema:
+    hikari:
+      idle-timeout: 10000
+      maximum-pool-size: 3
+    hibernate:
+      # hbm2ddl.method: create-drop
+
+  jpa:
+    hibernate:
+      show_sql: true
+      format_sql: true
+      dialect: org.hibernate.dialect.H2Dialect
+  elasticsearch:
+    rest:
+      uris: 10.60.105.39:9201
+  app:
+    path:
+      upload: C:/upload
+
+#datasource:
+#  sampleapp:
+#    url: jdbc:h2:~/test
+#    username: SA
+#    password:
+#    driverClassName: org.h2.Driver
+#    defaultSchema:
+#    maxPoolSize: 10
+#    hibernate:
+#      # hbm2ddl.method: create-drop
+#      show_sql: true
+#      format_sql: true
+#      dialect: org.hibernate.dialect.H2Dialect

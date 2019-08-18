@@ -1,1 +1,2 @@
-IzziPlatformApi
+# IzziPlatform.Api
+Izziplatform api
